@@ -1,7 +1,7 @@
 import { HttpClientCallService } from './http-client-call.service';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
-import { EMPTY, Observable, } from 'rxjs';
+import { EMPTY, Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { Route } from '@angular/compiler/src/core';
 
