@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserDetailsComponent implements OnInit {
 
+  user_data:any;
   constructor(
     private activatedRoute: ActivatedRoute
   ) { }
@@ -16,6 +17,8 @@ export class UserDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(data => {
       console.log(data);
+      console.log(data.user);
+      this.user_data = data.user;
     })
   }
 

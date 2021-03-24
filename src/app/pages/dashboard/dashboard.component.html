@@ -1,5 +1,5 @@
 <p>dashboard works!</p>
 
-<div *ngFor="let each_user of users_list" >
+<div *ngFor="let each_user of users_list" (click)="selectUser(each_user)"  >
     {{each_user?.login}}
 </div>

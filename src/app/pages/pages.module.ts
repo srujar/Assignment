@@ -19,9 +19,12 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     PagesRoutingModule,
     ComponentsModule,
+    // HttpClientModule,
     // HttpClientCallService,
     // UserResolverService,
-    HttpClientModule
+  ],
+  providers:[
+    UserResolverService
   ]
 })
 export class PagesModule { }

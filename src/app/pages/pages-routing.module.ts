@@ -20,13 +20,13 @@ const routes: Routes = [
     component: UserComponent,
     children: [
       {
-        path: ':user_name',
-        component: UserDetailsComponent,
-        resolve: UserResolverService
-      },
-      {
         path: 'not-found',
         component: UserNotFoundComponent
+      },
+      {
+        path: ':user_name',
+        component: UserDetailsComponent,
+        resolve: { user: UserResolverService }
       }
     ]
   }

@@ -22,7 +22,7 @@ export class UserResolverService implements Resolve<any> {
       .pipe(
         catchError(error => {
           console.log("error", error);
-          this.router.navigateByUrl('users/not-found');
+          this.router.navigateByUrl('user/not-found');
           return EMPTY;
         })
       )

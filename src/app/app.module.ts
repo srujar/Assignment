@@ -1,5 +1,5 @@
-import { UserResolverService } from './service/user-resolver.service';
-import { HttpClientCallService } from './service/http-client-call.service';
+// import { UserResolverService } from './service/user-resolver.service';
+// import { HttpClientCallService } from './service/http-client-call.service';
 import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './pages/pages.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,10 +21,11 @@ import { HttpClientModule } from '@angular/common/http';
     ComponentsModule,
     // HttpClientCallService,
     // UserResolverService,
-    // HttpClientModule
+    HttpClientModule
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+
   ],
   bootstrap: [AppComponent]
 })
