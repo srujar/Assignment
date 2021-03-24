@@ -1,3 +1,4 @@
+import { HttpClientCallService } from './../../service/http-client-call.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  users_list:any;
+  constructor(
+    private httpClientCallService:HttpClientCallService
+  ) { }
 
   ngOnInit(): void {
+    this.httpClientCallService.getUsersList().subscribe(data=>{
+      console.log(data);
+      this.users_list = data;
+    })
   }
+
 
 }

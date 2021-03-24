@@ -1,7 +1,10 @@
+import { UserResolverService } from './../service/user-resolver.service';
+import { UserNotFoundComponent } from './user-not-found/user-not-found.component';
 import { UserComponent } from './user/user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 const routes: Routes = [
   {
@@ -13,7 +16,19 @@ const routes: Routes = [
     path: 'dashboard', component: DashboardComponent
   },
   {
-    path: 'user', component: UserComponent
+    path: 'user',
+    component: UserComponent,
+    children: [
+      {
+        path: ':user_name',
+        component: UserDetailsComponent,
+        resolve: UserResolverService
+      },
+      {
+        path: 'not-found',
+        component: UserNotFoundComponent
+      }
+    ]
   }
 ];
 
