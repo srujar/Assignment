@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "gitUsers"
+    }
+  },
+  "defaultProject": "gitUsers",
+  "cli": {
+    "analytics": "7cd6e149-e75a-4c7f-8361-974619f4b16b"
+  }
 }
