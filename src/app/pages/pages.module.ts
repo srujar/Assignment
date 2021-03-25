@@ -12,6 +12,9 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserNotFoundComponent } from './user-not-found/user-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { PlotlyViaCDNModule } from 'angular-plotly.js';
+PlotlyViaCDNModule.setPlotlyVersion('latest');
+// PlotlyViaCDNModule.plotlyBundle = null;
 
 @NgModule({
   declarations: [DashboardComponent, UserComponent, UserDetailsComponent, UserNotFoundComponent],
@@ -22,8 +25,10 @@ import { HttpClientModule } from '@angular/common/http';
     // HttpClientModule,
     // HttpClientCallService,
     // UserResolverService,
+    PlotlyViaCDNModule
+
   ],
-  providers:[
+  providers: [
     UserResolverService
   ]
 })

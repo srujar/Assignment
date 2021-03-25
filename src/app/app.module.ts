@@ -9,6 +9,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
+// import * as PlotlyJS from 'plotly.js/dist/plotly.js';
+// import { PlotlyModule } from 'angular-plotly.js';
+
+// PlotlyModule.plotlyjs = PlotlyJS;
+
 @NgModule({
   declarations: [
     AppComponent
@@ -21,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     ComponentsModule,
     // HttpClientCallService,
     // UserResolverService,
-    HttpClientModule
+    HttpClientModule,
+    // PlotlyModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
