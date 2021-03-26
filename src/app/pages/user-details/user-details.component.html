@@ -1,9 +1,36 @@
-<p>user-details works!</p>
-<!-- <div>
-    <img [src]="user_data.avatar_url" alt="">
+<div class="row">
+    <div class="col-12" style="height:17vh;">
+        <div style="position: absolute;bottom: 0px;margin-left:35%">
+            <!-- [state]='{ data: "srujan"}' -->
+            <a class="a-link ml-3" routerLink='./overview' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
+                <li class="fa fa-folder-open"></li>&nbsp;Overview</a>
+            <a class="a-link ml-3" routerLink='./repo' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
+                <li class="fa fa-book"></li>&nbsp;Repositories</a>
+            <a class="a-link ml-3" routerLink='./projects' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
+                <li class="fa fa-folder"></li>&nbsp;Projects</a>
+            <a class="a-link ml-3" routerLink='./packages' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
+                <li class="fa fa-cube"></li>&nbsp;Packages</a>
+        </div>
+    </div>
+    <div class="col-12" style="background-color:#e7e2e2;height: 0.1px;"> </div>
+    <div class="col-1" style="height:100vh;"></div>
+    <div class="col-3" style="height:100vh;margin-top:-8vh;">
+        <app-user-profile></app-user-profile>
+    </div>
+    <div class="col-7" style="height:100vh;">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="col-1" style="height:100vh;"></div>
+</div>
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-12;height:5vh;background-color:green"></div>
+    </div>
 </div> -->
-
-<!-- srujan  -->
-<plotly-plot *ngIf="z_array.length" [data]="graph?.data"></plotly-plot>
-
-srujan end
+<!-- <p>user-details works!</p>
+<div>
+    <img [src]="user_data.avatar_url" alt="">
+</div>
+*ngIf="z_array.length"
+<plotly-plot  [data]="graph?.data"></plotly-plot> -->

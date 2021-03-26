@@ -5,6 +5,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { OverviewComponent } from '../components/overview/overview.component';
+import { RepositoriesComponent } from '../components/repositories/repositories.component';
+import { ProjectsComponent } from '../components/projects/projects.component';
+import { PackagesComponent } from '../components/packages/packages.component';
 
 const routes: Routes = [
   {
@@ -26,7 +30,14 @@ const routes: Routes = [
       {
         path: ':user_name',
         component: UserDetailsComponent,
-        resolve: { user: UserResolverService }
+        resolve: { user: UserResolverService },
+        children: [
+          { path: '', redirectTo: 'overview', pathMatch: 'full' },
+          { path: 'overview', component: OverviewComponent },
+          { path: 'repo', component: RepositoriesComponent },
+          { path: 'projects', component: ProjectsComponent },
+          { path: 'packages', component: PackagesComponent }
+        ]
       }
     ]
   }

@@ -57,7 +57,7 @@ export class UserDetailsComponent implements OnInit {
           [10, '#9be9a8'],
           [20, '#40c463'],
           [30, '#30a14e'],
-          [40, '#216e39'],
+          [100, '#216e39'],
         ],
         showscale: false
       },
@@ -66,7 +66,7 @@ export class UserDetailsComponent implements OnInit {
       //   type: 'heatmap'
       // }
     ],
-    // layout: {width: 320, height: 240, title: 'A Fancy Plot'}
+    layout: {width: 320, height: 240, title: 'A Fancy Plot'}
   };
 
   plotGraphData(data) {

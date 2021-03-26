@@ -1,0 +1,10 @@
+<h6 class="mt-3 mb-3">Popular repositories</h6>
+<div class="row">
+    <div class="col-6 mb-3" *ngFor="let item of array">
+        <app-cards></app-cards>
+    </div>
+</div>
+
+<div>
+    <plotly-plot [data]="data"></plotly-plot>
+</div>
