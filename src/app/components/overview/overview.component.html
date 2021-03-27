@@ -1,10 +1,15 @@
 <h6 class="mt-3 mb-3">Popular repositories</h6>
 <div class="row">
-    <div class="col-6 mb-3" *ngFor="let item of array">
-        <app-cards></app-cards>
+    <div class="col-6 mb-3" *ngFor="let each_repo of users_repos">
+        <app-cards [repo_data]=each_repo [slector]='"overview"'></app-cards>
     </div>
 </div>
 
 <div>
-    <plotly-plot [data]="data"></plotly-plot>
+    <h6>{{user_contributions}} contributions in the last year</h6>
+</div>
+<div class="card" style="width: 100%">
+    <div class="card-body">
+        <plotly-plot *ngIf="z_array.length" [data]="graph?.data"></plotly-plot>
+    </div>
 </div>

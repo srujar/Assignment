@@ -17,13 +17,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.httpClientCallService.getUsersList().subscribe(data => {
-      console.log(data);
       this.users_list = data;
     })
   }
 
   selectUser(user_data) {
-    console.log("user_data", user_data.login);
     this.router.navigateByUrl(`/user/${user_data.login}`);
   }
 

@@ -1,7 +1,40 @@
 <div class="card" style="width: 100%">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
+    <ng-container *ngIf="slector=='overview'">
+        <div class="card-body">
+            <h5 class="card-title card-title1" style="color: blue;">{{repo_data?.name}}</h5>
+            <p class="card-text">{{repo_data?.description}}</p>
+            <p class="card-text">
+                <span *ngIf="repo_data?.language" class="dot"></span> {{repo_data?.language}} <span class="ml-3" *ngIf="repo_data?.forks_count">
+                <li class="fa fa-code-fork"></li>&nbsp;{{repo_data?.forks_count}}
+            </span></p>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="slector=='repo'">
+        <div class="card-body">
+            <h5 class="card-title card-title1" style="color: blue;">{{repo_data?.name}}</h5>
+            <p class="card-text">{{repo_data?.description}}</p>
+            <p class="card-text">
+                <span *ngIf="repo_data?.language" class="dot"></span> {{repo_data?.language}} <span class="ml-3" *ngIf="repo_data?.forks_count">
+                <li class="fa fa-code-fork"></li>&nbsp;{{repo_data?.forks_count}}
+                <span class="ml-3"> Updated {{ repo_data?.updated_at | datePipe}}</span>
+                </span>
+            </p>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="slector=='projects'">
+        <div *ngIf="index == 0" class="pt-3 pl-3 pb-3" style="background-color: #f6f8fa;">
+            <li class="fa fa-calendar-minus-o"></li>&nbsp; {{projects_count}} Open
+            <li class="fa fa-check"></li>&nbsp; 0 Close
+        </div>
+        <hr>
+        <div class="card-body">
+            <h5 class="card-title card-title1">{{each_project?.name}}</h5>
+            <li class="fa fa-clock-o"></li>&nbsp;Updated on {{each_project?.updated_at | datePipe}}
+        </div>
+    </ng-container>
+    <ng-container *ngIf="slector=='no_data'">
+        <div class="card-body" style="height: 60vh;">
+            <h4> {{users_name}} doesn't have any projects yet.</h4>
+        </div>
+    </ng-container>
 </div>

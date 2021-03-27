@@ -1,5 +1,19 @@
-<p>dashboard works!</p>
-
-<div *ngFor="let each_user of users_list" (click)="selectUser(each_user)"  >
-    {{each_user?.login}}
+<br>
+<div class="container">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Avator</th>
+                <th scope="col">Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let each_user of users_list;let i = index" (click)="selectUser(each_user)">
+                <td scope="row">{{i+1}}</td>
+                <td style="width: 20%;"><img [src]="each_user?.avatar_url" style="border-radius: 50%;width: 15%;"></td>
+                <td>{{each_user?.login}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

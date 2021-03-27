@@ -1,5 +1,14 @@
 .a-link {
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 300;
     color: black;
 }
+
+.active {
+    text-decoration: underline;
+    text-decoration-color: rgb(255, 123, 0);
+    text-decoration-thickness: 15%;
+    font-weight: bold;
+}
+
+.rl-active:hover {}

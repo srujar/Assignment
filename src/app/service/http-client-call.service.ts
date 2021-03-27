@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map, catchError } from 'rxjs/operators';
-import { EMPTY, of } from 'rxjs';
+import { map, catchError, tap } from 'rxjs/operators';
+import { EMPTY, of, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpClientCallService {
+
+  user_details = new BehaviorSubject<any>([]);
+  user_repos = new BehaviorSubject<any>([]);
+  user_projects = new BehaviorSubject<any>([]);
+  user_contributions = new BehaviorSubject<any>([]);
 
   //Sample Varriables
   token = '26ee0e844dcfb633ff28174961a8517762b4d499';
@@ -18,7 +23,12 @@ export class HttpClientCallService {
 
   //https://api.github.com/users/srujar
   getUser(user_name): any {
-    return this.httpClient.get<any>(`https://api.github.com/users/${user_name}`);
+    return this.httpClient.get<any>(`https://api.github.com/users/${user_name}`).pipe(
+      tap(value => {
+        if (value) {
+          this.user_details.next(value);
+        }
+      }));
   }
 
   getUsersList(): any {
@@ -26,16 +36,25 @@ export class HttpClientCallService {
   }
 
   getUsersRepos(user_name): any {
-    return this.httpClient.get<any>(`https://api.github.com/users/${user_name}/repos`);
+    return this.httpClient.get<any>(`https://api.github.com/users/${user_name}/repos`).pipe(
+      tap(value => {
+        if (value) {
+          this.user_repos.next(value);
+        }
+      }));
   }
 
   getUsersProjects(user_name): any {
     let custom_httpOptions = { headers: new HttpHeaders({ Accept: ['application/vnd.github.spiderman-preview', "application/vnd.github.inertia-preview+json"] }) };
-    return this.httpClient.get<any>(`https://api.github.com/users/${user_name}/projects`, custom_httpOptions);
+    return this.httpClient.get<any>(`https://api.github.com/users/${user_name}/projects`, custom_httpOptions).pipe(
+      tap(value => {
+        if (value) {
+          this.user_projects.next(value);
+        }
+      }));
   }
 
   getUserContibutions(username, from_date, to_date): any {
-    console.log(" from_date, to_date..........", from_date, to_date)
     let body = {
       "query": `query {
           user(login: "${username}") {
@@ -64,6 +83,7 @@ export class HttpClientCallService {
       .pipe(
         map(value => {
           if (value) {
+            this.user_contributions.next(value.data.user.contributionsCollection.contributionCalendar);
             return value.data.user.contributionsCollection.contributionCalendar
           }
         }),

@@ -1,5 +1,3 @@
-// import { UserResolverService } from './service/user-resolver.service';
-// import { HttpClientCallService } from './service/http-client-call.service';
 import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './pages/pages.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,11 +6,6 @@ import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/c
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-
-// import * as PlotlyJS from 'plotly.js/dist/plotly.js';
-// import { PlotlyModule } from 'angular-plotly.js';
-
-// PlotlyModule.plotlyjs = PlotlyJS;
 
 @NgModule({
   declarations: [
@@ -24,10 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     PagesModule,
     ComponentsModule,
-    // HttpClientCallService,
-    // UserResolverService,
     HttpClientModule,
-    // PlotlyModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

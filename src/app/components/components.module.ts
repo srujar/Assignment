@@ -9,13 +9,16 @@ import { ProjectsComponent } from './projects/projects.component';
 import { PackagesComponent } from './packages/packages.component';
 import { CardsComponent } from './cards/cards.component';
 import { PlotlyViaCDNModule } from 'angular-plotly.js';
+import { PipeModule } from '../pipe/pipe.module';
+
 PlotlyViaCDNModule.setPlotlyVersion('latest');
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, UserProfileComponent, OverviewComponent, RepositoriesComponent, ProjectsComponent, PackagesComponent, CardsComponent],
   imports: [
     CommonModule,
-    PlotlyViaCDNModule
+    PlotlyViaCDNModule,
+    PipeModule
   ],
   exports: [
     HeaderComponent,
@@ -27,6 +30,9 @@ PlotlyViaCDNModule.setPlotlyVersion('latest');
     UserProfileComponent,
     PackagesComponent,
     CardsComponent
+  ],
+  providers:[
+    
   ]
 })
 export class ComponentsModule { }
