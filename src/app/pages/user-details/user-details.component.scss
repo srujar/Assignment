@@ -21,12 +21,10 @@
     .big-screen {
         display: none;
     }
-    div.scrollmenu a {
-        display: inline-block;
-        color: white;
-        text-align: center;
-        padding: 14px;
-        text-decoration: none;
+    .small-div-nav {
+        display: flex !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
     }
     .big-screen-margin-top {
         margin-top: -8vh;
@@ -34,4 +32,12 @@
     .big-screen-a {
         margin-left: 0px;
     }
+}
+
+.container-outer {
+    overflow: scroll;
+}
+
+.container-inner {
+    width: 570px;
 }
