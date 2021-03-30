@@ -14,7 +14,7 @@ export class HttpClientCallService {
   user_contributions = new BehaviorSubject<any>([]);
 
   //Sample Varriables
-  token = '2a0fb899fabd37f80a143a4c9848f51147d4abb5';
+  token = '';
   httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': `bearer ${this.token}` }) };
 
   constructor(
