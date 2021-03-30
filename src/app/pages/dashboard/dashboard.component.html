@@ -4,14 +4,14 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Avator</th>
+                <th class="small-screen" scope="col">Avator</th>
                 <th scope="col">Username</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let each_user of users_list;let i = index" (click)="selectUser(each_user)">
                 <td scope="row">{{i+1}}</td>
-                <td style="width: 20%;"><img [src]="each_user?.avatar_url" style="border-radius: 50%;width: 15%;"></td>
+                <td class="small-screen" style="width: 20%;"><img [src]="each_user?.avatar_url" style="border-radius: 50%;width: 15%;"></td>
                 <td>{{each_user?.login}}</td>
             </tr>
         </tbody>
