@@ -5,3 +5,27 @@
     border-radius: 50%;
     width: 80%;
 }
+
+@media only screen and (min-width: 760px) {
+    .center {}
+    .small-screen-username {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .small-screen {
+        display: none;
+    }
+    .small-screen-image {
+        border-radius: 50%;
+        width: 50%;
+        float: left;
+    }
+    .small-screen-name {
+        float: right;
+    }
+    .large-screen-username {
+        display: none;
+    }
+}

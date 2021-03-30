@@ -1,6 +1,6 @@
 <div class="row">
-    <div class="col-12" style="height:15vh;">
-        <div style="position: absolute;bottom: 0px;margin-left:35%">
+    <div class="col-md-12 small-screen" style="height:15vh;">
+        <div style="position: absolute;bottom: 0px;margin-left:35%;">
             <!-- [state]='{ data: "srujan"}' -->
             <a class="a-link" routerLink='./overview' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
                 <li class="fa fa-folder-open"></li>&nbsp;Overview</a>
@@ -12,13 +12,30 @@
                 <li class="fa fa-cube"></li>&nbsp;Packages</a>
         </div>
     </div>
-    <div class="col-12" style="background-color:#e7e2e2;height: 0.1px;"> </div>
-    <div class="col-1" style="height:100vh;"></div>
-    <div class="col-3" style="height:100vh;margin-top:-8vh;">
+    <div class="col-md-12" style="background-color:#e7e2e2;height: 0.1px;"> </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-3 col-sm-12 big-screen-margin-top">
         <app-user-profile [user_data]="user_data"></app-user-profile>
     </div>
-    <div class="col-7" style="height:100vh;">
+    <div class="col-md-12 big-screen" style="background-color:#e7e2e2;height: 0.1px;"> </div>
+
+    <!-- thsi is for small screen  -->
+    <div class="col-sm-12 big-screen">
+        <br>
+        <div style="overflow:auto;width: 100;">
+            <!-- [state]='{ data: "srujan"}' -->
+            <a class="a-link ml-5" routerLink='./overview' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
+                <li class="fa fa-folder-open"></li>&nbsp;Overview</a>
+            <a class="a-link ml-5" routerLink='./repo' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
+                <li class="fa fa-book"></li>&nbsp;Repositories</a>
+            <a class="a-link ml-5" routerLink='./projects' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
+                <li class="fa fa-folder"></li>&nbsp;Projects</a>
+            <a class="a-link ml-5" routerLink='./packages' routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
+                <li class="fa fa-cube"></li>&nbsp;Packages</a>
+        </div>
+    </div>
+    <div class="col-md-7">
         <router-outlet></router-outlet>
     </div>
-    <div class="col-1" style="height:100vh;"></div>
+    <div class="col-md-12"></div>
 </div>

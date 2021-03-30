@@ -30,7 +30,8 @@ export class OverviewComponent implements OnInit, OnDestroy {
         showscale: false
       },
     ],
-    layout: { width: 320, height: 240, title: 'A Fancy Plot' }
+    // layout: { width: 320, height: 240, title: 'A Fancy Plot' },
+    config : {responsive: true}
   };
 
   $user_repos: any;

@@ -11,4 +11,27 @@
     font-weight: bold;
 }
 
-.rl-active:hover {}
+@media only screen and (max-width: 760px) {
+    .small-screen {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 760px) {
+    .big-screen {
+        display: none;
+    }
+    div.scrollmenu a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+    }
+    .big-screen-margin-top {
+        margin-top: -8vh;
+    }
+    .big-screen-a {
+        margin-left: 0px;
+    }
+}
